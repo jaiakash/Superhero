@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.118359375" />
         <entry key="app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.1315990818668707" />
         <entry key="app/src/main/res/layout/activity_scrolling.xml" value="0.17426545086119555" />
+        <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_row_main.xml" value="0.2776268115942029" />
       </map>
     </option>
   </component>

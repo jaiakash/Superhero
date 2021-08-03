@@ -5,6 +5,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -72,7 +73,7 @@ public class ScrollingActivity extends AppCompatActivity {
         nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if(scrollY==v.getChildAt(0).getMeasuredHeight()-v.getMeasuredHeight()){
+                if(scrollY==(v.getChildAt(0).getMeasuredHeight()-v.getMeasuredHeight())){
                     page++;
                     progressBar.setVisibility(View.VISIBLE);
 
@@ -89,6 +90,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 .baseUrl("https://picsum.photos/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
+
 
         //Create main interface
         MainInterface mainInterface = retrofit.create(MainInterface.class);

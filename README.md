@@ -6,7 +6,7 @@ Rahul is a huge dog lover and his birthday is right around the corner. His frien
 ## Normal Mode
 
 <ul>
-  <li>Create scrollable pages with all the different dog breeds and different dog images listed.</li>
+  <li>Create scrollable pages with all the different dog breeds and different dog images listed.<b>Done</b> </li>
   <li>Each card in the above pages should display complete information of the respective card (name, temperament, origin, height, life span, weight etc.), when clicked.</li>
   <li>Allow users to upload an image and get its corresponding analysis</li>
 </ul>

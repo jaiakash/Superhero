@@ -10,3 +10,5 @@ Rahul is a huge dog lover and his birthday is right around the corner. His frien
   <li>Each card in the above pages should display complete information of the respective card (name, temperament, origin, height, life span, weight etc.), when clicked.</li>
   <li>Allow users to upload an image and get its corresponding analysis</li>
 </ul>
+
+Submitted by Akash Jaiswal

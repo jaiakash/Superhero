@@ -15,10 +15,10 @@ public class DisplayActivity extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(ScrollingActivity.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(message);
+        ((TextView)findViewById(R.id.name)).setText("Name : "+intent.getStringExtra("Name"));
+        ((TextView)findViewById(R.id.bred)).setText("Bred For : "+intent.getStringExtra("Bred"));
+        ((TextView)findViewById(R.id.temperament)).setText("Temperament : "+intent.getStringExtra("Temperament"));
     }
 }

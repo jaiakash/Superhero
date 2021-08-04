@@ -143,8 +143,10 @@ public class ScrollingActivity extends AppCompatActivity {
                 data.setImage("https://cdn2.thedogapi.com/images/"+object.getString("reference_image_id")+".jpg");
                 //data.setImage(object.getString("image.url"));
 
-                //Set name
+                //Set properties
                 data.setName(object.getString("name"));
+                data.setBred(object.getString("bred_for"));
+                data.setTemperament(object.getString("temperament"));
 
                 //Add data in array list
                 dataArrayList.add(data);

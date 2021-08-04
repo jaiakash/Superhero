@@ -63,8 +63,11 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
                 //Toast.makeText(activity.getApplicationContext(), data.getName(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(activity.getApplicationContext(), DisplayActivity.class);
-                String message = data.getName();
-                intent.putExtra(EXTRA_MESSAGE, message);
+
+                intent.putExtra("Name", data.getName());
+                intent.putExtra("Bred", data.getBred());
+                intent.putExtra("Temperament", data.getTemperament());
+
                 activity.startActivity(intent);
             }
         });

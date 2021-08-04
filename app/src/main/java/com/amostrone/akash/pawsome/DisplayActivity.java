@@ -21,7 +21,7 @@ public class DisplayActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.bred)).setText("Bred For : "+intent.getStringExtra("Bred"));
         ((TextView)findViewById(R.id.temperament)).setText("Temperament : "+intent.getStringExtra("Temperament"));
         ((TextView)findViewById(R.id.life)).setText("Life Span : "+intent.getStringExtra("Life"));
-        ((TextView)findViewById(R.id.weight)).setText("Weight : "+intent.getStringExtra("Weight")+" kf");
+        ((TextView)findViewById(R.id.weight)).setText("Weight : "+intent.getStringExtra("Weight")+" kg");
         ((TextView)findViewById(R.id.height)).setText("Height : "+intent.getStringExtra("Height")+" cm");
 
     }

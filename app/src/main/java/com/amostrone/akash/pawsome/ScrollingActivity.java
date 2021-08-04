@@ -141,7 +141,6 @@ public class ScrollingActivity extends AppCompatActivity {
 
                 //Set image
                 data.setImage("https://cdn2.thedogapi.com/images/"+object.getString("reference_image_id")+".jpg");
-                //Toast.makeText(getApplicationContext(), object.getJSONArray("image").toString(), Toast.LENGTH_SHORT).show();
                 //data.setImage(object.getString("image.url"));
 
                 //Set name
@@ -177,6 +176,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(getApplicationContext(), "App is in development", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -184,9 +184,10 @@ public class ScrollingActivity extends AppCompatActivity {
 
     public void dog_card_clicked(View view) {
         Toast.makeText(getApplicationContext(), dataArrayList.get(0).getName(), Toast.LENGTH_SHORT).show();
+        dataArrayList.size();
 
         Intent intent = new Intent(this, DisplayActivity.class);
-        String message = dataArrayList.get(0).getName();
+        String message = dataArrayList.size()+"";
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }

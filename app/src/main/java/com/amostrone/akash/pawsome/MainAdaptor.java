@@ -70,6 +70,7 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
                 intent.putExtra("Life", data.getLife());
                 intent.putExtra("Height", data.getHeight());
                 intent.putExtra("Weight", data.getWeight());
+                intent.putExtra("Image", data.getImage());
 
                 activity.startActivity(intent);
             }

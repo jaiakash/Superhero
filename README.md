@@ -19,8 +19,8 @@ Rahul is a huge dog lover and his birthday is right around the corner. His frien
 
 ## Hacker Mode ++
 <li>Apply Pagination. <b>Done</b> </li>
-<li>Implement swiping on images/name cards to remove dogs from favourites</li>
-<li>Allow sharing favourite dog images to other platforms</li>
+<li>Implement swiping on images/name cards to remove dogs from favourites.</li>
+<li>Allow sharing favourite dog images to other platforms.</li>
 
 
 ### Submitted by Akash Jaiswal

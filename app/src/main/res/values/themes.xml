@@ -22,4 +22,11 @@
     <style name="Theme.Pawsome.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Pawsome.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorAccent">#CC4418</item>
+        <item name="android:statusBarColor">#CC4418</item>
+    </style>
+
 </resources>

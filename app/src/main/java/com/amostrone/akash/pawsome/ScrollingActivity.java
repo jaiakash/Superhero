@@ -87,7 +87,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private void getData(int page,int limit){
         //Initialise retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://picsum.photos/")
+                .baseUrl("https://api.thedogapi.com/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
 
@@ -134,10 +134,12 @@ public class ScrollingActivity extends AppCompatActivity {
                 MainData data = new MainData();
 
                 //Set image
-                data.setImage(object.getString("download_url"));
+                data.setImage("https://cdn2.thedogapi.com/images/"+object.getString("reference_image_id")+".jpg");
+                //Toast.makeText(getApplicationContext(), object.getJSONArray("image").toString(), Toast.LENGTH_SHORT).show();
+                //data.setImage(object.getString("image.url"));
 
                 //Set name
-                data.setName(object.getString("author"));
+                data.setName(object.getString("name"));
 
                 //Add data in array list
                 dataArrayList.add(data);

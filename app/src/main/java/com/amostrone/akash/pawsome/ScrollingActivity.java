@@ -1,9 +1,13 @@
 package com.amostrone.akash.pawsome;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -40,6 +44,8 @@ public class ScrollingActivity extends AppCompatActivity {
     ArrayList<MainData> dataArrayList = new ArrayList<MainData>();
     MainAdaptor adaptor;
     int page=1,limit=10;
+
+    public static final String EXTRA_MESSAGE = "com.amostrone.akash.pawsome.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,5 +180,14 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void dog_card_clicked(View view) {
+        Toast.makeText(getApplicationContext(), dataArrayList.get(0).getName(), Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, DisplayActivity.class);
+        String message = dataArrayList.get(0).getName();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }

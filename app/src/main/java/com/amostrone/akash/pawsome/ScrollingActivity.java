@@ -175,7 +175,7 @@ public class ScrollingActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_upload) {
             Toast.makeText(getApplicationContext(), "App is in development", Toast.LENGTH_SHORT).show();
             return true;
         }

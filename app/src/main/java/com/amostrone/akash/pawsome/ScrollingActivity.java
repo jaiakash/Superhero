@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -140,8 +141,10 @@ public class ScrollingActivity extends AppCompatActivity {
                 MainData data = new MainData();
 
                 //Set image
-                data.setImage("https://cdn2.thedogapi.com/images/"+object.getString("reference_image_id")+".jpg");
-                //data.setImage(object.getString("image.url"));
+                //data.setImage("https://cdn2.thedogapi.com/images/"+object.getString("reference_image_id")+".jpg");
+
+                //Toast.makeText(getApplicationContext(), object.getJSONObject("image").getString("url"), Toast.LENGTH_SHORT).show();
+                data.setImage(object.getJSONObject("image").getString("url"));
 
                 //Set properties
                 data.setName(object.getString("name"));

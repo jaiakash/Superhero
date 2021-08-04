@@ -147,6 +147,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 data.setName(object.getString("name"));
                 data.setBred(object.getString("bred_for"));
                 data.setTemperament(object.getString("temperament"));
+                data.setLife(object.getString("life_span"));
 
                 //Add data in array list
                 dataArrayList.add(data);

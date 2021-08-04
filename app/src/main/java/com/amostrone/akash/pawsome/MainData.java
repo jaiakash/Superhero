@@ -1,7 +1,7 @@
 package com.amostrone.akash.pawsome;
 
 public class MainData {
-    private String name,image,bred,temperament;
+    private String name,image,bred,temperament,life;
 
     public String getName() {
         return name;
@@ -33,5 +33,13 @@ public class MainData {
 
     public void setTemperament(String temperament) {
         this.temperament = temperament;
+    }
+
+    public String getLife() {
+        return life;
+    }
+
+    public void setLife(String life) {
+        this.life = life;
     }
 }

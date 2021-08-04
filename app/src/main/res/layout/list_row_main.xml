@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ll_card"
-        android:onClick="dog_card_clicked"
         android:orientation="horizontal">
 
         <ImageView

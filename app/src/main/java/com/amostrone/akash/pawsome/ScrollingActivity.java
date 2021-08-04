@@ -181,14 +181,4 @@ public class ScrollingActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public void dog_card_clicked(View view) {
-        Toast.makeText(getApplicationContext(), dataArrayList.get(0).getName(), Toast.LENGTH_SHORT).show();
-        dataArrayList.size();
-
-        Intent intent = new Intent(this, DisplayActivity.class);
-        String message = dataArrayList.size()+"";
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
 }

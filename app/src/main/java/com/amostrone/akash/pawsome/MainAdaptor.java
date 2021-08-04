@@ -1,11 +1,16 @@
 package com.amostrone.akash.pawsome;
 
+import static com.amostrone.akash.pawsome.ScrollingActivity.EXTRA_MESSAGE;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,6 +55,19 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
 
         //Set name on text view
         holder.textView.setText(data.getName());
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(activity.getApplicationContext(), data.getName(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(activity.getApplicationContext(), DisplayActivity.class);
+                String message = data.getName();
+                intent.putExtra(EXTRA_MESSAGE, message);
+                activity.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -62,6 +80,7 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
         //Initialize Variables
         ImageView imageView;
         TextView textView;
+        LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +88,7 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
             //Assign Variables
             imageView = itemView.findViewById(R.id.image_view);
             textView = itemView.findViewById(R.id.text_view);
+            linearLayout = itemView.findViewById(R.id.ll_card);
         }
     }
 }

@@ -14,7 +14,7 @@ Rahul is a huge dog lover and his birthday is right around the corner. His frien
 
 ## Hacker Mode
 <li>Incorporate a search feature in the normal mode pages.</li>
-<li>Add Splash Screen with animations.</li>
+<li>Add Splash Screen with animations. <b>Done</b></li>
 <li>Include an option to vote for dogs you like and display them in the favourites section, which will have the upvoted dogs. Allow the users to remove dogs from favourites.</li>
 
 ## Hacker Mode ++

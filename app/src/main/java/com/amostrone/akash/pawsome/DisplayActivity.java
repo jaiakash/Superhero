@@ -58,24 +58,11 @@ public class DisplayActivity extends AppCompatActivity {
         // Get access to the URI for the bitmap
         Uri bmpUri = getLocalBitmapUri(ivImage);
 
-        // getExternalFilesDir() + "/Pictures" should match the declaration in fileprovider.xml paths
-        File file = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "share_image_" + System.currentTimeMillis() + ".png");
-
-        // wrap File object into a content provider. NOTE: authority here should match authority in manifest declaration
-        bmpUri = FileProvider.getUriForFile(DisplayActivity.this, "com.amostrone.akash.pawsome.fileprovider", file);
-        if (bmpUri != null) {
-            // Construct a ShareIntent with link to image
-            Intent shareIntent = new Intent();
-            shareIntent.setAction(Intent.ACTION_SEND);
-            shareIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
-            shareIntent.setType("image/*");
-            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            // Launch sharing dialog for image
-            startActivity(Intent.createChooser(shareIntent, "Share Image"));
-        } else {
-            // ...sharing failed, handle error
-            Toast.makeText(getApplicationContext(), "Sharing Failed", Toast.LENGTH_SHORT).show();
-        }
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
+        shareIntent.setType("image/jpeg");
+        startActivity(Intent.createChooser(shareIntent, "Share Image"));
     }
     // Returns the URI path to the Bitmap displayed in specified ImageView
     public Uri getLocalBitmapUri(ImageView imageView) {
@@ -92,13 +79,18 @@ public class DisplayActivity extends AppCompatActivity {
         try {
             // Use methods on Context to access package-specific directories on external storage.
             // This way, you don't need to request external read/write permission.
-            // See https://youtu.be/5xVh-7ywKpE?t=25m25s
             File file =  new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "share_image_" + System.currentTimeMillis() + ".png");
             FileOutputStream out = new FileOutputStream(file);
             bmp.compress(Bitmap.CompressFormat.PNG, 90, out);
             out.close();
+
+            bmpUri = FileProvider.getUriForFile(
+                    DisplayActivity.this,
+                    "com.amostrone.akash.pawsome.fileprovider", //(use your app signature + ".provider" )
+                    file);
+
             // **Warning:** This will fail for API >= 24, use a FileProvider as shown below instead.
-            bmpUri = Uri.fromFile(file);
+            //bmpUri = Uri.fromFile(file);
         } catch (IOException e) {
             e.printStackTrace();
         }

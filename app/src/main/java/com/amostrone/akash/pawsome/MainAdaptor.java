@@ -81,7 +81,7 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
         holder.vote_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity.getApplicationContext(), "Voted to favorite", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity.getApplicationContext(), "Voted to favorites", Toast.LENGTH_SHORT).show();
             }
         });
     }

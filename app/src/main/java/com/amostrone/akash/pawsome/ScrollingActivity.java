@@ -204,7 +204,9 @@ public class ScrollingActivity extends AppCompatActivity {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     // use this method when query submitted
-                    Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT).show();
+                    if(!query.equalsIgnoreCase(MainAdaptor.fav_name)){
+                        Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT).show();
+                    }
                     return false;
                 }
 

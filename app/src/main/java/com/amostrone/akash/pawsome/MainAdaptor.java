@@ -1,7 +1,5 @@
 package com.amostrone.akash.pawsome;
 
-import static com.amostrone.akash.pawsome.ScrollingActivity.EXTRA_MESSAGE;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -22,6 +20,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.ArrayList;
 
 public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
+
+    public static int fav_count=0;
+    public static String fav_name="";
 
     //Initialize Variables
     private ArrayList<MainData> dataArrayList;
@@ -81,7 +82,8 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
         holder.vote_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity.getApplicationContext(), "Voted to favorites", Toast.LENGTH_SHORT).show();
+                fav_count++;
+                fav_name=data.getName();
             }
         });
     }

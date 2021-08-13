@@ -188,6 +188,11 @@ public class ScrollingActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "App is in development", Toast.LENGTH_SHORT).show();
             return true;
         }
+        if (id == R.id.action_favorite) {
+            Toast.makeText(getApplicationContext(), MainAdaptor.fav_name, Toast.LENGTH_SHORT).show();
+
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

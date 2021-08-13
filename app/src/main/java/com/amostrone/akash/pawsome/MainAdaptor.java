@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -75,6 +76,14 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
                 activity.startActivity(intent);
             }
         });
+        
+        //Set Vote Response
+        holder.vote_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity.getApplicationContext(), "Voted to favorite", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -88,6 +97,7 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
         ImageView imageView;
         TextView textView;
         LinearLayout linearLayout;
+        Button vote_button;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -96,6 +106,7 @@ public class MainAdaptor extends RecyclerView.Adapter<MainAdaptor.ViewHolder> {
             imageView = itemView.findViewById(R.id.image_view);
             textView = itemView.findViewById(R.id.text_view);
             linearLayout = itemView.findViewById(R.id.ll_card);
+            vote_button = itemView.findViewById(R.id.vote);
         }
     }
 }

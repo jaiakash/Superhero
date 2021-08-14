@@ -84,7 +84,7 @@ public class DisplayActivity extends AppCompatActivity {
 
             bmpUri = FileProvider.getUriForFile(
                     DisplayActivity.this,
-                    "com.amostrone.akash.pawsome.fileprovider", //(use your app signature + ".provider" )
+                    "com.amostrone.akash.superhero.fileprovider", //(use your app signature + ".provider" )
                     file);
 
             // **Warning:** This will fail for API >= 24, use a FileProvider as shown below instead.

@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pawsome">
+        android:theme="@style/Theme.Superhero">
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.amostrone.akash.superhero.fileprovider"
@@ -36,7 +36,7 @@
             android:name="com.amostrone.akash.superhero.ScrollingActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Pawsome.NoActionBar">
+            android:theme="@style/Theme.Superhero.NoActionBar">
         </activity>
     </application>
 

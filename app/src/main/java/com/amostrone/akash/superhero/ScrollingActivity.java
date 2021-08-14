@@ -23,11 +23,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -142,9 +139,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 MainData data = new MainData();
 
                 //Set image
-                //data.setImage("https://cdn2.thedogapi.com/images/"+object.getString("reference_image_id")+".jpg");
 
-                //Toast.makeText(getApplicationContext(), object.getJSONObject("image").getString("url"), Toast.LENGTH_SHORT).show();
                 data.setImage(object.getJSONObject("image").getString("url"));
 
                 //Set properties
@@ -193,34 +188,11 @@ public class ScrollingActivity extends AppCompatActivity {
                 }
             });
 
-            /* EditText searchPlate = (EditText) searchView.findViewById( androidx.appcompat.R.id.search_src_text);
-            //searchPlate.setHint("Search");
-            View searchPlateView = searchView.findViewById( androidx.appcompat.R.id.search_plate);
-            //searchPlateView.setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent));
-            // use this method for search process*/
-
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     // use this method when query submitted
-                    OkHttpClient client = new OkHttpClient();
 
-                    Request request = new Request.Builder()
-                            .url("https://api.thedogapi.com/v1/breeds/search?q="+query)
-                            .get()
-                            .addHeader("x-api-key", "546ece19-7a66-4951-afe7-8da3695e19ff")
-                            .build();
-
-                    okhttp3.Response response=null;
-                    try {
-                        response = client.newCall(request).execute();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    if(!query.equalsIgnoreCase(MainAdaptor.fav_name)){
-                        Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT).show();
-                    }
                     return false;
                 }
 
@@ -251,7 +223,7 @@ public class ScrollingActivity extends AppCompatActivity {
         }
         if (id == R.id.action_favorite) {
             Toast.makeText(getApplicationContext(), MainAdaptor.fav_name, Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(getApplicationContext(), "App is in development", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onOptionsItemSelected(item);

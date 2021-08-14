@@ -92,7 +92,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private void getData(int page,int limit){
         //Initialise retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.thedogapi.com/")
+                .baseUrl("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
 
@@ -140,15 +140,15 @@ public class ScrollingActivity extends AppCompatActivity {
 
                 //Set image
 
-                data.setImage(object.getJSONObject("image").getString("url"));
+                data.setImage(object.getJSONObject("images").getString("md"));
 
                 //Set properties
                 data.setName(object.getString("name"));
-                data.setBred(object.getString("bred_for"));
-                data.setTemperament(object.getString("temperament"));
-                data.setLife(object.getString("life_span"));
-                data.setWeight(object.getJSONObject("weight").getString("metric"));
-                data.setHeight(object.getJSONObject("height").getString("metric"));
+                data.setBred(object.getString("slug"));
+                data.setTemperament(object.getJSONObject("connections").getString("groupAffiliation"));
+                data.setLife(object.getJSONObject("biography").getString("publisher"));
+                data.setWeight(object.getJSONObject("appearance").getString("weight"));
+                data.setHeight(object.getJSONObject("appearance").getString("height"));
 
 
                 //Add data in array list
@@ -169,43 +169,6 @@ public class ScrollingActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-
-        final MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        if (searchItem != null) {
-            searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-            searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-                @Override
-                public boolean onClose() {
-                    //some operation
-                    return true;
-                }
-            });
-            searchView.setOnSearchClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //some operation
-                }
-            });
-
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    // use this method when query submitted
-
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    // use this method for auto complete search process
-                    return false;
-                }
-            });
-            SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
-        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -227,14 +190,5 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (!searchView.isIconified()) {
-            searchView.setIconified(true);
-        } else {
-            super.onBackPressed();
-        }
     }
 }

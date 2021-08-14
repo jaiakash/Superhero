@@ -1,26 +1,34 @@
-# Pawsome
-## Delta App Task 3
+# Superhero
+## Spider App Task 3
 
-Rahul is a huge dog lover and his birthday is right around the corner. His friend Mario decides to make an app- Pawsome, to surprise him. He decides to make it all about dogs, so that in spite of being at home, he can still look at different types of dogs and know more about them. While doing his research, he finds out about https://thedogapi.com/ and decides to use the API to fetch details, for his app. Help him complete it so his surprise is ready on time.
+Ankur, a definition geek, has spent all his life in material books, and has
+no clue about the wonderful world of superheroes. Anand, his new roommate in
+college and a big superhero geek, can’t believe his own roommate doesn’t know
+anything about them. So, he decided to make an app, using your help, that serves
+as an encyclopedia of superheroes for Ankur, leading him into the light. Hence,
+help him make the app using the below-mentioned.
 
-## Normal Mode
+### LEVEL 1:
+<li>Show all the heroes in a recycler view.
+<li>Upon clicking on an item, show all stats(data) accordingly and his/her
+image.
 
-<ul>
-  <li>Create scrollable pages with all the different dog breeds and different dog images listed. <b>Done</b> </li>
-  <li>Each card in the above pages should display complete information of the respective card (name, temperament, origin, height, life span, weight etc.), when clicked. <b>Done</b> </li>
-  <li>Used Glide and Retrofit libraries. <b>Done</b> </li>
-  <li>Allow users to upload an image and get its corresponding analysis</li>
-</ul>
+### LEVEL 2:
+<li>Use loaders to mask the waiting time till data is fetched completely.
+<li>Use shared element transition for pictures.
+<li>Implement searching heroes by name and ID.
+<li>Implement a side navigation drawer which has menu items to navigate
+between different pages, name ones showing ALL the heroes (as in level
+one), only FEMALE heroes and only MALE heroes (use fragments).
 
-## Hacker Mode
-<li>Incorporate a search feature in the normal mode pages.</li>
-<li>Add Splash Screen with animations. <b>Done</b></li>
-<li>Include an option to vote for dogs you like and display them in the favourites section, which will have the upvoted dogs. Allow the users to remove dogs from favourites.</li>
-
-## Hacker Mode ++
-<li>Apply Pagination. <b>Done</b> </li>
-<li>Implement swiping on images/name cards to remove dogs from favourites.</li>
-<li>Allow sharing favourite dog images to other platforms. <b>Done</b> </li>
+#### LEVEL 3:
+<li>Implement adding a particular hero to Favourites, that is, saving the hero
+to a local database (use Room or SQLite), and add a menu item to the side
+navigation drawer named FAVOURITES to see the list of such saved heroes.
+<li>Implement the searching mechanism (by name and ID) in Favourites
+section also.
+<li>Implement sharing of the details of your favourite Hero.
+<li>Add a splash screen to your app.
 
 
 ### Submitted by Akash Jaiswal

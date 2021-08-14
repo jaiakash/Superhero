@@ -1,32 +1,33 @@
-package com.amostrone.akash.pawsome;
+package com.amostrone.akash.superhero;
 
 import android.app.SearchManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.amostrone.akash.pawsome.databinding.ActivityScrollingBinding;
+import com.amostrone.akash.superhero.databinding.ActivityScrollingBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,8 +48,6 @@ public class ScrollingActivity extends AppCompatActivity {
     ArrayList<MainData> dataArrayList = new ArrayList<MainData>();
     MainAdaptor adaptor;
     int page=1,limit=10;
-
-    public static final String EXTRA_MESSAGE = "com.amostrone.akash.pawsome.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,6 +203,21 @@ public class ScrollingActivity extends AppCompatActivity {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     // use this method when query submitted
+                    OkHttpClient client = new OkHttpClient();
+
+                    Request request = new Request.Builder()
+                            .url("https://api.thedogapi.com/v1/breeds/search?q="+query)
+                            .get()
+                            .addHeader("x-api-key", "546ece19-7a66-4951-afe7-8da3695e19ff")
+                            .build();
+
+                    okhttp3.Response response=null;
+                    try {
+                        response = client.newCall(request).execute();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                     if(!query.equalsIgnoreCase(MainAdaptor.fav_name)){
                         Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT).show();
                     }

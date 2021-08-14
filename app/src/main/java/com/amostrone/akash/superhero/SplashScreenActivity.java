@@ -1,6 +1,5 @@
-package com.amostrone.akash.pawsome;
+package com.amostrone.akash.superhero;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 

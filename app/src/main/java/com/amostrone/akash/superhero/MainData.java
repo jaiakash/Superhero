@@ -1,4 +1,4 @@
-package com.amostrone.akash.pawsome;
+package com.amostrone.akash.superhero;
 
 public class MainData {
     private String name,image,bred,temperament,life,weight,height;

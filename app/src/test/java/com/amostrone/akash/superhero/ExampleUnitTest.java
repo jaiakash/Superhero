@@ -1,4 +1,4 @@
-package com.amostrone.akash.pawsome;
+package com.amostrone.akash.superhero;
 
 import org.junit.Test;
 
